@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "postinstall": "npm install --prefix server && npm install --prefix client/bot",
-    "build": "npm run build --prefix client/bot",
+    "build": "npm run build --prefix client/bot && node scripts/copy-client-dist.js",
     "start": "npm start --prefix server",
     "dev": "npm run dev --prefix server",
     "dev:client": "npm run dev --prefix client/bot",
