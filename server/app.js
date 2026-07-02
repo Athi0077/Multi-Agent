@@ -10,7 +10,15 @@ const chatRoutes = require("./routes/chatRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://your-vercel-app.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Test Route
@@ -23,7 +31,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes); 
+app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 
 module.exports = app;
