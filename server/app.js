@@ -14,9 +14,9 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-vercel-app.vercel.app",
+      "https://multi-agent-i3d3-nu.vercel.app",
     ],
-    credentials: true,
+    credentials: true, 
   })
 );
 app.use(express.json());
